@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>English</title>
+    <meta name="description" content="EOS blockchain explore. Search the EOS blockchain for transactions, accounts, keys, tokens, prices, contracts, rank.">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="theme-color" content="#12161c">
+    <!--[if IE]>
+    <link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="EOS Flare">
+    <meta name="msapplication-TileColor" content="#f1bb00">
+    <link href="./js/app.css" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+        
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css" id="vuetify-theme-stylesheet">
+        a {
+            color: #f0b90b;
+        }
+        
+        .primary {
+            background-color: #f0b90b !important;
+            border-color: #f0b90b !important;
+        }
+        
+        .primary--text {
+            color: #f0b90b !important;
+        }
+        
+        .primary--text input,
+        .primary--text textarea {
+            caret-color: #f0b90b !important;
+        }
+        
+        .primary--after::after {
+            background: #f0b90b !important;
+        }
+        
+        .primary.lighten-5 {
+            background-color: #ffffac !important;
+            border-color: #ffffac !important;
+        }
+        
+        .primary--text.text--lighten-5 {
+            color: #ffffac !important;
+        }
+        
+        .primary--text.text--lighten-5 input,
+        .primary--text.text--lighten-5 textarea {
+            caret-color: #ffffac !important;
+        }
+        
+        .primary.lighten-5--after::after {
+            background: #ffffac !important;
+        }
+        
+        .primary.lighten-4 {
+            background-color: #ffff8f !important;
+            border-color: #ffff8f !important;
+        }
+        
+        .primary--text.text--lighten-4 {
+            color: #ffff8f !important;
+        }
+        
+        .primary--text.text--lighten-4 input,
+        .primary--text.text--lighten-4 textarea {
+            caret-color: #ffff8f !important;
+        }
+        
+        .primary.lighten-4--after::after {
+            background: #ffff8f !important;
+        }
+        
+        .primary.lighten-3 {
+            background-color: #ffff72 !important;
+            border-color: #ffff72 !important;
+        }
+        
+        .primary--text.text--lighten-3 {
+            color: #ffff72 !important;
+        }
+        
+        .primary--text.text--lighten-3 input,
+        .primary--text.text--lighten-3 textarea {
+            caret-color: #ffff72 !important;
+        }
+        
+        .primary.lighten-3--after::after {
+            background: #ffff72 !important;
+        }
+        
+        .primary.lighten-2 {
+            background-color: #fff156 !important;
+            border-color: #fff156 !important;
+        }
+        
+        .primary--text.text--lighten-2 {
+            color: #fff156 !important;
+        }
+        
+        .primary--text.text--lighten-2 input,
+        .primary--text.text--lighten-2 textarea {
+            caret-color: #fff156 !important;
+        }
+        
+        .primary.lighten-2--after::after {
+            background: #fff156 !important;
+        }
+        
+        .primary.lighten-1 {
+            background-color: #ffd437 !important;
+            border-color: #ffd437 !important;
+        }
+        
+        .primary--text.text--lighten-1 {
+            color: #ffd437 !important;
+        }
+        
+        .primary--text.text--lighten-1 input,
+        .primary--text.text--lighten-1 textarea {
+            caret-color: #ffd437 !important;
+        }
+        
+        .primary.lighten-1--after::after {
+            background: #ffd437 !important;
+        }
+        
+        .primary.darken-1 {
+            background-color: #d19e00 !important;
+            border-color: #d19e00 !important;
+        }
+        
+        .primary--text.text--darken-1 {
+            color: #d19e00 !important;
+        }
+        
+        .primary--text.text--darken-1 input,
+        .primary--text.text--darken-1 textarea {
+            caret-color: #d19e00 !important;
+        }
+        
+        .primary.darken-1--after::after {
+            background: #d19e00 !important;
+        }
+        
+        .primary.darken-2 {
+            background-color: #b38400 !important;
+            border-color: #b38400 !important;
+        }
+        
+        .primary--text.text--darken-2 {
+            color: #b38400 !important;
+        }
+        
+        .primary--text.text--darken-2 input,
+        .primary--text.text--darken-2 textarea {
+            caret-color: #b38400 !important;
+        }
+        
+        .primary.darken-2--after::after {
+            background: #b38400 !important;
+        }
+        
+        .primary.darken-3 {
+            background-color: #956b00 !important;
+            border-color: #956b00 !important;
+        }
+        
+        .primary--text.text--darken-3 {
+            color: #956b00 !important;
+        }
+        
+        .primary--text.text--darken-3 input,
+        .primary--text.text--darken-3 textarea {
+            caret-color: #956b00 !important;
+        }
+        
+        .primary.darken-3--after::after {
+            background: #956b00 !important;
+        }
+        
+        .primary.darken-4 {
+            background-color: #795300 !important;
+            border-color: #795300 !important;
+        }
+        
+        .primary--text.text--darken-4 {
+            color: #795300 !important;
+        }
+        
+        .primary--text.text--darken-4 input,
+        .primary--text.text--darken-4 textarea {
+            caret-color: #795300 !important;
+        }
+        
+        .primary.darken-4--after::after {
+            background: #795300 !important;
+        }
+        
+        .secondary {
+            background-color: #0894ec !important;
+            border-color: #0894ec !important;
+        }
+        
+        .secondary--text {
+            color: #0894ec !important;
+        }
+        
+        .secondary--text input,
+        .secondary--text textarea {
+            caret-color: #0894ec !important;
+        }
+        
+        .secondary--after::after {
+            background: #0894ec !important;
+        }
+        
+        .secondary.lighten-5 {
+            background-color: #cdffff !important;
+            border-color: #cdffff !important;
+        }
+        
+        .secondary--text.text--lighten-5 {
+            color: #cdffff !important;
+        }
+        
+        .secondary--text.text--lighten-5 input,
+        .secondary--text.text--lighten-5 textarea {
+            caret-color: #cdffff !important;
+        }
+        
+        .secondary.lighten-5--after::after {
+            background: #cdffff !important;
+        }
+        
+        .secondary.lighten-4 {
+            background-color: #aeffff !important;
+            border-color: #aeffff !important;
+        }
+        
+        .secondary--text.text--lighten-4 {
+            color: #aeffff !important;
+        }
+        
+        .secondary--text.text--lighten-4 input,
+        .secondary--text.text--lighten-4 textarea {
+            caret-color: #aeffff !important;
+        }
+        
+        .secondary.lighten-4--after::after {
+            background: #aeffff !important;
+        }
+        
+        .secondary.lighten-3 {
+            background-color: #8ee6ff !important;
+            border-color: #8ee6ff !important;
+        }
+        
+        .secondary--text.text--lighten-3 {
+            color: #8ee6ff !important;
+        }
+        
+        .secondary--text.text--lighten-3 input,
+        .secondary--text.text--lighten-3 textarea {
+            caret-color: #8ee6ff !important;
+        }
+        
+        .secondary.lighten-3--after::after {
+            background: #8ee6ff !important;
+        }
+        
+        .secondary.lighten-2 {
+            background-color: #6ccaff !important;
+            border-color: #6ccaff !important;
+        }
+        
+        .secondary--text.text--lighten-2 {
+            color: #6ccaff !important;
+        }
+        
+        .secondary--text.text--lighten-2 input,
+        .secondary--text.text--lighten-2 textarea {
+            caret-color: #6ccaff !important;
+        }
+        
+        .secondary.lighten-2--after::after {
+            background: #6ccaff !important;
+        }
+        
+        .secondary.lighten-1 {
+            background-color: #47aeff !important;
+            border-color: #47aeff !important;
+        }
+        
+        .secondary--text.text--lighten-1 {
+            color: #47aeff !important;
+        }
+        
+        .secondary--text.text--lighten-1 input,
+        .secondary--text.text--lighten-1 textarea {
+            caret-color: #47aeff !important;
+        }
+        
+        .secondary.lighten-1--after::after {
+            background: #47aeff !important;
+        }
+        
+        .secondary.darken-1 {
+            background-color: #007acf !important;
+            border-color: #007acf !important;
+        }
+        
+        .secondary--text.text--darken-1 {
+            color: #007acf !important;
+        }
+        
+        .secondary--text.text--darken-1 input,
+        .secondary--text.text--darken-1 textarea {
+            caret-color: #007acf !important;
+        }
+        
+        .secondary.darken-1--after::after {
+            background: #007acf !important;
+        }
+        
+        .secondary.darken-2 {
+            background-color: #0062b4 !important;
+            border-color: #0062b4 !important;
+        }
+        
+        .secondary--text.text--darken-2 {
+            color: #0062b4 !important;
+        }
+        
+        .secondary--text.text--darken-2 input,
+        .secondary--text.text--darken-2 textarea {
+            caret-color: #0062b4 !important;
+        }
+        
+        .secondary.darken-2--after::after {
+            background: #0062b4 !important;
+        }
+        
+        .secondary.darken-3 {
+            background-color: #004b98 !important;
+            border-color: #004b98 !important;
+        }
+        
+        .secondary--text.text--darken-3 {
+            color: #004b98 !important;
+        }
+        
+        .secondary--text.text--darken-3 input,
+        .secondary--text.text--darken-3 textarea {
+            caret-color: #004b98 !important;
+        }
+        
+        .secondary.darken-3--after::after {
+            background: #004b98 !important;
+        }
+        
+        .secondary.darken-4 {
+            background-color: #00357e !important;
+            border-color: #00357e !important;
+        }
+        
+        .secondary--text.text--darken-4 {
+            color: #00357e !important;
+        }
+        
+        .secondary--text.text--darken-4 input,
+        .secondary--text.text--darken-4 textarea {
+            caret-color: #00357e !important;
+        }
+        
+        .secondary.darken-4--after::after {
+            background: #00357e !important;
+        }
+        
+        .accent {
+            background-color: #deac37 !important;
+            border-color: #deac37 !important;
+        }
+        
+        .accent--text {
+            color: #deac37 !important;
+        }
+        
+        .accent--text input,
+        .accent--text textarea {
+            caret-color: #deac37 !important;
+        }
+        
+        .accent--after::after {
+            background: #deac37 !important;
+        }
+        
+        .accent.lighten-5 {
+            background-color: #ffffc1 !important;
+            border-color: #ffffc1 !important;
+        }
+        
+        .accent--text.text--lighten-5 {
+            color: #ffffc1 !important;
+        }
+        
+        .accent--text.text--lighten-5 input,
+        .accent--text.text--lighten-5 textarea {
+            caret-color: #ffffc1 !important;
+        }
+        
+        .accent.lighten-5--after::after {
+            background: #ffffc1 !important;
+        }
+        
+        .accent.lighten-4 {
+            background-color: #ffffa5 !important;
+            border-color: #ffffa5 !important;
+        }
+        
+        .accent--text.text--lighten-4 {
+            color: #ffffa5 !important;
+        }
+        
+        .accent--text.text--lighten-4 input,
+        .accent--text.text--lighten-4 textarea {
+            caret-color: #ffffa5 !important;
+        }
+        
+        .accent.lighten-4--after::after {
+            background: #ffffa5 !important;
+        }
+        
+        .accent.lighten-3 {
+            background-color: #ffff89 !important;
+            border-color: #ffff89 !important;
+        }
+        
+        .accent--text.text--lighten-3 {
+            color: #ffff89 !important;
+        }
+        
+        .accent--text.text--lighten-3 input,
+        .accent--text.text--lighten-3 textarea {
+            caret-color: #ffff89 !important;
+        }
+        
+        .accent.lighten-3--after::after {
+            background: #ffff89 !important;
+        }
+        
+        .accent.lighten-2 {
+            background-color: #ffe36e !important;
+            border-color: #ffe36e !important;
+        }
+        
+        .accent--text.text--lighten-2 {
+            color: #ffe36e !important;
+        }
+        
+        .accent--text.text--lighten-2 input,
+        .accent--text.text--lighten-2 textarea {
+            caret-color: #ffe36e !important;
+        }
+        
+        .accent.lighten-2--after::after {
+            background: #ffe36e !important;
+        }
+        
+        .accent.lighten-1 {
+            background-color: #fdc753 !important;
+            border-color: #fdc753 !important;
+        }
+        
+        .accent--text.text--lighten-1 {
+            color: #fdc753 !important;
+        }
+        
+        .accent--text.text--lighten-1 input,
+        .accent--text.text--lighten-1 textarea {
+            caret-color: #fdc753 !important;
+        }
+        
+        .accent.lighten-1--after::after {
+            background: #fdc753 !important;
+        }
+        
+        .accent.darken-1 {
+            background-color: #c09218 !important;
+            border-color: #c09218 !important;
+        }
+        
+        .accent--text.text--darken-1 {
+            color: #c09218 !important;
+        }
+        
+        .accent--text.text--darken-1 input,
+        .accent--text.text--darken-1 textarea {
+            caret-color: #c09218 !important;
+        }
+        
+        .accent.darken-1--after::after {
+            background: #c09218 !important;
+        }
+        
+        .accent.darken-2 {
+            background-color: #a27800 !important;
+            border-color: #a27800 !important;
+        }
+        
+        .accent--text.text--darken-2 {
+            color: #a27800 !important;
+        }
+        
+        .accent--text.text--darken-2 input,
+        .accent--text.text--darken-2 textarea {
+            caret-color: #a27800 !important;
+        }
+        
+        .accent.darken-2--after::after {
+            background: #a27800 !important;
+        }
+        
+        .accent.darken-3 {
+            background-color: #856000 !important;
+            border-color: #856000 !important;
+        }
+        
+        .accent--text.text--darken-3 {
+            color: #856000 !important;
+        }
+        
+        .accent--text.text--darken-3 input,
+        .accent--text.text--darken-3 textarea {
+            caret-color: #856000 !important;
+        }
+        
+        .accent.darken-3--after::after {
+            background: #856000 !important;
+        }
+        
+        .accent.darken-4 {
+            background-color: #6a4800 !important;
+            border-color: #6a4800 !important;
+        }
+        
+        .accent--text.text--darken-4 {
+            color: #6a4800 !important;
+        }
+        
+        .accent--text.text--darken-4 input,
+        .accent--text.text--darken-4 textarea {
+            caret-color: #6a4800 !important;
+        }
+        
+        .accent.darken-4--after::after {
+            background: #6a4800 !important;
+        }
+        
+        .error {
+            background-color: #ff007a !important;
+            border-color: #ff007a !important;
+        }
+        
+        .error--text {
+            color: #ff007a !important;
+        }
+        
+        .error--text input,
+        .error--text textarea {
+            caret-color: #ff007a !important;
+        }
+        
+        .error--after::after {
+            background: #ff007a !important;
+        }
+        
+        .info {
+            background-color: #999999 !important;
+            border-color: #999999 !important;
+        }
+        
+        .info--text {
+            color: #999999 !important;
+        }
+        
+        .info--text input,
+        .info--text textarea {
+            caret-color: #999999 !important;
+        }
+        
+        .info--after::after {
+            background: #999999 !important;
+        }
+        
+        .success {
+            background-color: #619200 !important;
+            border-color: #619200 !important;
+        }
+        
+        .success--text {
+            color: #619200 !important;
+        }
+        
+        .success--text input,
+        .success--text textarea {
+            caret-color: #619200 !important;
+        }
+        
+        .success--after::after {
+            background: #619200 !important;
+        }
+        
+        .warning {
+            background-color: #f0b90b !important;
+            border-color: #f0b90b !important;
+        }
+        
+        .warning--text {
+            color: #f0b90b !important;
+        }
+        
+        .warning--text input,
+        .warning--text textarea {
+            caret-color: #f0b90b !important;
+        }
+        
+        .warning--after::after {
+            background: #f0b90b !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div data-app="true" class="application theme--dark" id="app">
+
+        <div class="application--wrap">
+            <div>
+                <div class="container fluid grid-list-lg">
+                    <div class="layout align-center justify-center row fill-height wrap">
+                        <div class="flex xs12 sm12 md6 lg6 xl8">
+                            <div class="card__actions">
+                                <a href="https://nozbo.com/" class="hidden-sm-and-down"><img src="./js/eosflare-48.png"></a> <a href="https://nozbo.com/"><span class="display-1 primary--text">English</span></a>
+                                <div class="spacer"></div>
+                                <div class="menu" style="display: inline-block;">
+                                    <div class="menu__activator">
+                                        <button type="button" class="btn btn--flat btn--floating btn--small">
+                                        <div class="btn__content"><span data-v-ef4411aa=""
+                                                                        class="flag flag-us normal-flag"
+                                                                        style="transform: scale(0.5);"></span></div>
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex xs12 sm12 md6 lg6 xl4">
+                            <div class="card__actions">
+                                <div class="white searchinput input-group input-group--hide-details input-group--placeholder theme--light input-group--solo input-group--text-field input-group--single-line black--text">
+                                    <div class="input-group__input"><input tabindex="0" placeholder="world" type="text" id= "typeText"></div>
+                                    <div class="input-group__details"></div>
+                                </div>
+                                <button type="button" class="searchbtn btn btn--large btn--depressed success" onclick = "changeText(this)">
+                                <div class="btn__content"><span class="title">GO</span></div>
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main id="main" class="" data-booted="true" style="padding: 0px; height: 100%">
+                <div>
+                    <span tabindex="-1" class="chip chip--disabled chip--label chip--outline chip--small primary primary--text">
+                            <span class="chip__content">salutes</span>
+                    </span>
+                    <!--                 <span tabindex="-1" class="chip chip&#45;&#45;disabled chip&#45;&#45;label chip&#45;&#45;small error white&#45;&#45;text">-->
+                    <!--                    <span class="chip__content">Sent</span>-->
+                    <!--                 </span>-->
+                    <!--                 <div class="title greymain&#45;&#45;text" style="margin-left: 8px">n. 敬礼</div>-->
+                    <div class="" style="margin-left: 8px">The policeman salutes me as I walk by
+                    </div>
+                    <hr class="divider bluedivider my-2">
+                </div>
+                <br>
+                <div>
+                    <span tabindex="-1" class="chip chip--disabled chip--label chip--outline chip--small primary primary--text">
+                            <span class="chip__content" >salutes</span>
+                    </span>
+                    <!--                 <span tabindex="-1" class="chip chip&#45;&#45;disabled chip&#45;&#45;label chip&#45;&#45;small error white&#45;&#45;text">-->
+                    <!--                    <span class="chip__content">Sent</span>-->
+                    <!--                 </span>-->
+                    <!--                 <div class="title greymain&#45;&#45;text" style="margin-left: 8px">n. 敬礼</div>-->
+                    <div class="" style="margin-left: 8px">The policeman salutes me as I walk by
+                    </div>
+                    <hr class="divider bluedivider my-2">
+                </div>
+                <br>
+                <div>
+                    <span tabindex="-1" class="chip chip--disabled chip--label chip--outline chip--small primary primary--text">
+                                <span class="chip__content">salutes</span>
+                    </span>
+                    <!--                 <span tabindex="-1" class="chip chip&#45;&#45;disabled chip&#45;&#45;label chip&#45;&#45;small error white&#45;&#45;text">-->
+                    <!--                    <span class="chip__content">Sent</span>-->
+                    <!--                 </span>-->
+                    <!--                 <div class="title greymain&#45;&#45;text" style="margin-left: 8px">n. 敬礼</div>-->
+                    <div class="" style="margin-left: 8px">The policeman salutes me as I walk by
+                    </div>
+
+                </div>
+
+            </main>
+            <div class="text-xs-center card card--flat card--tile blackmain" style="height: auto;">
+                <hr class="divider mt-5">
+                <div class="card__text">
+                    <p>Englist learning <span class="success px-2 py-1"> nozbo.com</span></p>
+                    <p><span class="greymain--text">© 2000-2099</span> <a href=""><strong>nozbo.com</strong></a> <span class="greymain--text">contact@nozbo.com</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function addItem(world, instance) {
+            return item =
+                '<div>' +
+                '<span tabindex="-1" class="chip chip--disabled chip--label chip--outline chip--small primary primary--text">' +
+                '<span class="chip__content">' + world + '</span>' +
+                '</span>' +
+                '<div style = "margin-left: 8px" > ' + instance + '</div> <hr class = "divider bluedivider my-2" >' +
+                '</div> ' +
+                '<br >';
+        }
+
+        var srcUrl = "./data/page"
+        var main = document.getElementById('main');
+        console.log(main)
+        main.innerHTML = "";
+
+        var typeText = document.getElementById('typeText');
+        function changeText()
+        {
+			var value =  typeText.value?typeText.value:1
+			var data = {"t":1,
+			    "type": value},
+			url = srcUrl + value + ".json";
+			
+            var request = new XMLHttpRequest();
+			
+            request.open("GET", url);
+			request.setRequestHeader("Content-Type", "application/json");
+            request.onreadystatechange = function() {
+
+                if (request.readyState !== 4) return;
+                if (request.status === 200) {
+                    var item = JSON.parse(request.responseText);
+					console.log(item);
+                    var items = "";
+					Object.keys(item).forEach(function(key){
+						items += addItem(key, item[key]);
+					})
+                    main.innerHTML = items;
+                }
+            }
+
+            request.send(toQueryString(data));
+        }
+		changeText();
+        function toQueryString(obj) {
+
+            var qstring = ""
+            for (var k in obj) {
+                qstring += k + "=" + obj[k] + "&"
+            }
+            return qstring
+
+        }
+
+    </script>>
+</body>
+
+</html>
