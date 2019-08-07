@@ -2880,7 +2880,7 @@ html {
 	align-items: center;
 	display: -ms-flexbox;
 	display: flex;
-	padding: 8px 4px
+	padding: 8px 0px
 }
 
 .card__actions .btn,
