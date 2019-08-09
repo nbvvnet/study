@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"testfile": "mocha",
+    "testfile": "mocha",
     "test": "npm run testfile \"test/**/*.spec.js\" --timeout 1000000"
   },
   "repository": {
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/nbvvnet/study/issues"
   },
-  "homepage": "https://github.com/nbvvnet/study#readme"
+  "homepage": "https://github.com/nbvvnet/study#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
 }
